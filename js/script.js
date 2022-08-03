@@ -103,7 +103,16 @@ var newsComponent = {
         this.news.forEach(function (element) { 
             console.log(element.urlToImage);
             let $newElem = $newsElem.clone();
-            this.$elemImage = Mustache.render('<div class="news-image"><img src="{{.}}"></div>', element.urlToImage);
+            var htmlData = {
+            
+            urlToImage: element.urlToImage,
+            title: element.title,
+            content: element.content,
+            date: element.publishedAt,
+            author: element.author
+            }
+            this.$elemImage = Mustache.render('<div class="news-image"><img src="{{ urlToImage }}"></div><div class="news-title"><h2>{{ title }}</h2></div><div class="news-content"><span>{{ content }}</span><span class="float-right">{{ author }}</span><br><span class="float-right">{{ date }}</span>', htmlData);
+
             $newElem.html(this.$elemImage);
             $newElem.appendTo($newsRow);
         });
