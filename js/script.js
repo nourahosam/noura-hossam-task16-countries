@@ -65,18 +65,21 @@ var newsComponent = {
     },
     getCountry(data) {
         currentCountry = data;
+        localNews = [];
         $.ajax({
             type: "GET",
             async: false,
-            url: "https://newsapi.org/v2/everything?q="+data+"&apiKey=542b9ffe5cfe47e18c476d474aefc845",
+            url: "https://newsapi.org/v2/everything?q="+this.currentCountry+"&apiKey=542b9ffe5cfe47e18c476d474aefc845",
             cache: false,
             dataType: "json",
             success: function (data) {
-                
-                news = data.articles;
+                localNews = data.articles;
                 //console.log(news);
             }
         });
+        console.log("Local news");
+        this.news = localNews ? localNews : [];
+        console.log(this.news);
         this.render();
     },
     bindEvents: function () {
