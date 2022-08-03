@@ -83,3 +83,8 @@ body{
     margin-left: 30px;
 }
 
+.country-info{
+    margin: 0 auto;
+    border: 2px solid white;
+    width: 70%;
+}
