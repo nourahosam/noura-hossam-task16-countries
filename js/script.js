@@ -69,7 +69,7 @@ var newsComponent = {
         $.ajax({
             type: "GET",
             async: false,
-            url: "https://newsapi.org/v2/everything?q="+this.currentCountry+"&apiKey=542b9ffe5cfe47e18c476d474aefc845",
+            url: "https://newsapi.org/v2/everything?q="+data+"&apiKey=542b9ffe5cfe47e18c476d474aefc845",
             cache: false,
             dataType: "json",
             success: function (data) {
@@ -100,6 +100,7 @@ var newsComponent = {
     // },
     render: function () {
         console.log(this.news);
+        $newsRow.empty();
         this.news.forEach(function (element) { 
             console.log(element.urlToImage);
             let $newElem = $newsElem.clone();
@@ -111,7 +112,7 @@ var newsComponent = {
             date: element.publishedAt,
             author: element.author
             }
-            this.$elemImage = Mustache.render('<div class="news-image"><img src="{{ urlToImage }}"></div><div class="news-content"><div class="news-title"><h2>{{ title }}</h2></div><span>{{ content }}</span><span class="float-right">{{ author }}</span><br><span class="float-right">{{ date }}</span>', htmlData);
+            this.$elemImage = Mustache.render('<div class="news-image"><img src="{{ urlToImage }}" onerror=this.src="./img/notfound.png"></div><div class="news-content"><div class="news-title"><h2>{{ title }}</h2></div><span>{{ content }}</span><span class="float-right">{{ author }}</span><br><span class="float-right">{{ date }}</span>', htmlData);
 
             $newElem.html(this.$elemImage);
             $newElem.appendTo($newsRow);

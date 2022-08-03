@@ -1,3 +1,9 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: navy;
+}
+
 .card {
     background-color: blue;
     width: 300px;
@@ -19,6 +25,10 @@
     pointer-events: none;
 }
 
+.header{
+    
+}
+
 .news{
     display: flex;
     flex-direction: row;
@@ -26,6 +36,14 @@
     /* margin: 30px; */
     border: 2px solid white;
     /* height: 300px; */
+}
+.country-container {
+    width: 80%;
+    overflow-x:scroll;
+    overflow-y: hidden;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border: 2px solid white;
 }
 
 .news-container {
