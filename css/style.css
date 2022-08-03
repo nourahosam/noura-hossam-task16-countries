@@ -22,12 +22,14 @@
 .news{
     display: flex;
     flex-direction: row;
-    background-color: green;
     width: 70%;
+    /* margin: 30px; */
+    border: 2px solid white;
     /* height: 300px; */
 }
 
 .news-container {
+    background-color: navy;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,7 +40,7 @@
 }
 .news-image {
     width: 300px;
-    /* height: 300px; */
+    height: 300px;
     overflow: hidden;
     margin: 30px;
 }
@@ -58,6 +60,7 @@
     float: right;
 }
 .news-title{
+    display: inline;
     margin-top: 30px;
     margin-left: 30px;
 }
