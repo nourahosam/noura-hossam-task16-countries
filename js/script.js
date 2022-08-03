@@ -72,6 +72,7 @@ var newsComponent = {
             cache: false,
             dataType: "json",
             success: function (data) {
+                
                 news = data.articles;
                 //console.log(news);
             }
@@ -95,14 +96,14 @@ var newsComponent = {
     //     });
     // },
     render: function () {
-        console.log(news);
-        news.forEach(function (element) { 
-            console.log(element.urlToImage);
-            let $newElem = $newsElem.clone();
-            this.$elemImage = Mustache.render('<div class="news-image"><img src="{{.}}"></div>', element.urlToImage);
-            $newElem.html(this.$elemImage);
-            $newElem.appendTo($newsRow);
-        });
+        console.log(this.news);
+        // news.forEach(function (element) { 
+        //     console.log(element.urlToImage);
+        //     let $newElem = $newsElem.clone();
+        //     this.$elemImage = Mustache.render('<div class="news-image"><img src="{{.}}"></div>', element.urlToImage);
+        //     $newElem.html(this.$elemImage);
+        //     $newElem.appendTo($newsRow);
+        // });
 
     },
     cacheElements: function(){
