@@ -100,13 +100,13 @@ var newsComponent = {
     // },
     render: function () {
         console.log(this.news);
-        // news.forEach(function (element) { 
-        //     console.log(element.urlToImage);
-        //     let $newElem = $newsElem.clone();
-        //     this.$elemImage = Mustache.render('<div class="news-image"><img src="{{.}}"></div>', element.urlToImage);
-        //     $newElem.html(this.$elemImage);
-        //     $newElem.appendTo($newsRow);
-        // });
+        this.news.forEach(function (element) { 
+            console.log(element.urlToImage);
+            let $newElem = $newsElem.clone();
+            this.$elemImage = Mustache.render('<div class="news-image"><img src="{{.}}"></div>', element.urlToImage);
+            $newElem.html(this.$elemImage);
+            $newElem.appendTo($newsRow);
+        });
 
     },
     cacheElements: function(){
